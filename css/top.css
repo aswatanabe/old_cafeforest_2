@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+/* ---------- general.cssのリセット ---------- */
+body {
+    grid-template-areas:
+        "header header header "
+        "main main main"
+        "footer footer footer";
+}
+main {
+    grid-area: main;
+    padding-inline: 0;
+    padding-block: 0;
+}
+
+/* ---------- レイアウト ---------- */
+.top main {
+    display: grid;
+    grid-template-areas:
+        "hero hero hero"
+        ". about ."
+        ". link ."
+        ". news .";
+    grid-template-columns: 1fr calc(var(--logPx) * 960) 1fr;
+	background-image:url("../images/bg-cafeforest.jpg");
+	background-position: center;
+	background-attachment: local;
+    text-align: center;
+}
+.top h1 {
+    display: none;
+}
+.top main > section {
+    padding-block-start: 2.5em;
+	background-color: var(--color-orange2);
+}
+
+/* ---------- メインビジュアル ---------- */
+.top main > section:nth-of-type(1) {
+    grid-area: hero;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 0;
+    block-size: 75vh;
+    background-image: url("../images/cafeforest.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+}
+.top main > section:nth-of-type(1) > div > h2 {
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.top .btn a {
+    inline-size: max(200px, var(--logPx) * 250);
+    block-size: max(30px, var(--logPx) * 50);
+    border: 4px solid rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.top .btn a::after {
+    border-top: 4px solid rgb(255, 255, 255);
+    border-right: 4px solid rgb(255, 255, 255);
+}
+.top .btn a:is(:hover, :active) {
+    color: var(--color-brown1);
+    background-color: rgb(255, 255, 255);
+}
+.top .btn a:is(:hover, :active)::after {
+    border-top: 2px solid var(--color-brown1);
+    border-right: 2px solid var(--color-brown1);
+}
+/* ---------- Cafe Forestについて ---------- */
+.top main > section:nth-of-type(2) {
+    grid-area: about;
+}
+.top main > section:nth-of-type(2) > p:last-of-type > a {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+    margin-block: 2em;
+    padding-inline-start: 1.5em;
+    padding-block: 0.5em;
+    inline-size: 14em;
+    border-bottom: 1px solid var(--color-brown2);
+}
+.top main > section:nth-of-type(2) > p:last-of-type > a::after {
+    content: "";
+    inset-inline-start: 3px;
+    inline-size: 4px;
+    block-size: 4px;
+    border-top: 1px solid var(--color-brown2);
+    border-right: 1px solid var(--color-brown2);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* ---------- ナビゲーション ---------- */
+.top main > section:nth-of-type(3) {
+    grid-area: link;
+}
+.top main > section:nth-of-type(3) > h2 {
+    display: none;
+}
+.top main > section:nth-of-type(3) ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+.top main section:nth-of-type(3) ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    inline-size: calc(var(--logPx) * 220);
+    block-size: calc(var(--logPx) * 220);
+    padding: 2em;
+    border: 1px solid var(--color-brown2);
+    border-radius: 10%;
+    text-align: center;
+    background-color: var(--color-green1);
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+}
+.top main section:nth-of-type(3) ul > li:nth-of-type(1) > a {
+    background-image: url(../images/icon-calendar.png);
+}
+.top main section:nth-of-type(3) ul > li:nth-of-type(2) > a {
+    background-image: url(../images/icon-menu.png);
+}
+.top main section:nth-of-type(3) ul > li:nth-of-type(3) > a {
+    background-image: url(../images/icon-online.png);
+}
+.top main > section:nth-of-type(3) ul > li > a:is(:hover, :active) {
+    color: white;
+    background-color: var(--color-brown2);
+    transition: 0.5s;
+}
+/* ---------- お知らせ ---------- */
+.top main > section:nth-of-type(4) {
+    grid-area: news;
+    padding-block-end: 4em;
+}
+
+.top main > section:nth-of-type(4) > h2 {
+    text-align: center;
+}
+.top main > section:nth-of-type(4) > dl {
+    margin: auto;
+    inline-size: 80%;
+    text-align: start;
+}
+.top main > section:nth-of-type(4) > dl > a {
+    display: flex;
+    justify-content: center;
+    padding-block: 1em;
+    border-block-start: 1px solid black; 
+}
+.top main > section:nth-of-type(4) > dl > a:last-of-type {
+    border-block-end: 1px solid black; 
+}
+.top main > section:nth-of-type(4) > dl > a::after {
+    content: "";
+    inline-size: 4px;
+    block-size: 4px;
+    border-top: 1px solid var(--color-brown2);
+    border-right: 1px solid var(--color-brown2);
+    -webkit-transform: rotate(45deg) translate(0.6em);
+    transform: rotate(45deg) translate(0.6em);
+}
+.top main > section:nth-of-type(4) > dl > a > dt {
+    inset-inline-start: 30%;
+    inline-size: 30%;
+}
+.top main > section:nth-of-type(4) > dl > a > dd {
+    inset-inline-start: 50%;
+    inline-size: 50%;
+}
+
+/* =======================================================
+メディアクエリ
+======================================================= */
+@media screen and (max-width: 767px) {
+    .top main {
+        display: grid;
+        grid-template-areas:
+            "hero hero hero"
+            "about about about"
+            "link link link"
+            "news news news";
+    }
+    .top main > section:nth-of-type(1) {
+        block-size: 82vh;
+    }
+    .top main > section:not(:nth-of-type(1)) {
+        padding-inline: 2em;
+    }
+    /* ---------- about ---------- */
+    .top main > section:nth-of-type(2) > p:not(last-of-type) {
+        text-align: start;
+    }
+    .top main > section:nth-of-type(2) > p:last-of-type {
+        text-align: center;
+    }
+    /* ---------- link ---------- */
+    .top main > section:nth-of-type(3) ul {
+        flex-direction: column;
+    }
+    .top main > section:nth-of-type(3) ul > li {
+        margin-inline: auto;
+    }
+    .top main > section:nth-of-type(3) ul > li > a {
+        inline-size: 200px; /*固定*/
+        block-size: 200px; /*固定*/
+    }
+    /* ---------- news ---------- */
+    .top main > section:nth-of-type(4) > dl > a {
+        display: block;
+        margin: auto;
+    }
+    .top main > section:nth-of-type(4) > dl > a::after {
+        display: none;
+    }
+    .top main > section:nth-of-type(4) > dl > a > dt {
+        margin: auto;
+        inline-size: 75%;
+        font-size: 0.8em;
+    }
+    .top main > section:nth-of-type(4) > dl > a > dd {
+        margin: auto;
+        inline-size: 75%;
+    }
+}

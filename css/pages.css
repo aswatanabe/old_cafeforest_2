@@ -1,0 +1,427 @@
+@charset "utf-8";
+
+/******************** 今月のコーヒー＆ケーキ ********************/
+.monthly main > section:nth-of-type(1) {
+    margin-block-end: 5em;
+}
+.monthly main > section:nth-of-type(1) > p {
+	margin: auto;
+	inline-size: 80%;
+}
+.monthly main > section:nth-of-type(1) > p > br {
+	display: none;
+}
+.monthly main > section:nth-of-type(1) > article {
+	justify-content: center; 
+}
+.monthly main > section:nth-of-type(1) > article > h2 {
+    border-bottom: 1px solid;
+	margin-block-start: 2em;
+}
+.monthly main > section:nth-of-type(1) > article > section {
+	margin-inline:auto; 
+    margin-block-end: 3em;
+	padding-inline: 2em;
+	padding-block: 1em;
+	inline-size: 70%;
+	block-size: auto;
+	background-color: rgb(255,255,255);
+}
+.monthly main > section:nth-of-type(1) > article > section > p {
+	display: inline-block;
+	text-align: start;	
+}
+.monthly main > section:nth-of-type(1) > article > section > p:nth-of-type(1) {
+	margin-block-start: 1.6em;
+}
+.monthly main > section:nth-of-type(1) > article > section > p:nth-of-type(1) > img {
+    inline-size: 100%;
+}
+.monthly main > section:nth-of-type(2) > h2 {
+	text-align: center;
+}
+.monthly main > section:nth-of-type(2) > article {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    column-gap: 1em;
+	margin-block-end: 3em; 
+}
+.monthly main > section:nth-of-type(2) > article > h3 {
+    border-bottom: 1px solid;
+	margin-block-start: 1em;
+}
+.monthly main > section:nth-of-type(2) > article > *:nth-child(1) {
+	grid-column: 1 / span 2;
+	margin-block-end: 1em;
+}
+.monthly main > section:nth-of-type(2) > article > section {
+	padding: 0.5em;
+	background-color: rgb(255,255,255);
+}
+.monthly main > section:nth-of-type(2) > article img {
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+    inline-size: 100%;
+}
+.monthly main > p {
+	margin-block-start: 3em;
+	text-align: center;
+}
+.monthly main > aside > h32
+
+/* -------------------- お問い合わせ -------------------- */
+.contact main > h1 {
+	display:block;
+}
+.contact table {
+	padding: 1em;
+	inline-size: 100%;
+}
+.contact table tr {
+	block-size: 3em;   
+}
+.contact table tr th {
+	padding-inline-start: calc(20% - 4em);
+	inline-size: 40%;
+	text-align: start;
+}
+.contact table tr:not(:nth-of-type(4)) th::after {   /*「必須」マーク*/
+	content: "必須";
+	margin-inline-start: 1em;
+	padding: 3px;
+	font-size: 0.8em;
+	color: var(--color-brown1);
+	background-color: var(--color-orange1);
+}
+.contact table tr td input {
+	inline-size: 80%;
+	block-size: 2em;
+	padding: 0.5em;
+}
+.contact table tr:nth-of-type(1) td input {
+	inline-size: 40%;
+}
+.contact table tr:nth-of-type(4) td input {
+	inline-size: 40%;
+}
+.contact table tr td textarea {
+	margin-block-end: 1em;
+	inline-size: 80%;
+	block-size: 12em;
+	padding: 0.5em;
+}
+.confirm main > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+}
+.confirm main > div > p > button {
+	border: none;
+	border-bottom: 1px solid var(--color-link);
+	font-size: 1em;
+	color: var(--color-link);
+	background: transparent;
+	padding-block-start: 2em;
+	padding-block-end: 0.5em;
+}
+.confirm main > div > p > button:is(:hover, :active) {
+	border-bottom: 1px solid var(--color-hover);
+	color: var(--color-hover);
+}
+.confirm .btn_wrap {
+	inline-size: max(130px, var(--logPx) * 180);
+}
+.result main > ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+	margin-block: 3em;
+    padding-inline: 3em;
+}
+.result main > ul > h2 {
+	display: none;
+}
+.result main > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: calc(var(--logPx) * 250);
+    block-size: calc(var(--logPx) * 250);
+    text-align: center;
+    border: 1px solid var(--color-brown2);
+    border-radius: 50%;
+}
+.result main > ul > li > a:is(:hover, :active) {
+    color: white;
+    background-color: var(--color-green1);
+    transition : 0.5s;
+}
+/* -------------------- 通販 -------------------- */
+.online p {
+	text-align: start;
+}
+.online dt {
+	margin-block: 1em 0.5em;
+	font-weight: bold;
+}
+.online	dt::before {
+	content:url(../images/icon-bean.png);
+	margin-inline-end: 0.5em;
+}
+.online main > article {
+	margin-block: 3em;
+}
+.online main > article:nth-of-type(1) > section {
+	display: grid;
+	grid-template-columns: repeat(1fr, 2);
+	gap: 1em;
+}
+.online main > article:nth-of-type(1) > section > h3 {
+	grid-column: 1 / span 2;
+}
+.online main > article:nth-of-type(1) > section > article {
+	display: grid;
+	grid-template-areas:
+		"title price"
+		"image chart";
+	grid-template-columns: 48% auto;
+	gap:0.5em;
+	margin-block: 1em;
+	padding: 0.5em;
+	background-color: rgb(255,255,255);
+}
+.online main > article:nth-of-type(1) > section > article > img {
+	grid-area: image;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+    inline-size: 100%;
+}
+.online main > article:nth-of-type(1) > section > article > h4 {
+	grid-area: title;
+	font-weight: bold;
+	text-align: start;
+}
+.online main > article:nth-of-type(1) > section > article > p:nth-of-type(1) {
+	grid-area: price;
+	margin-block-end: 0px;
+	font-size: 0.8em;
+	text-align: start;
+}
+.online main > article:nth-of-type(1) > section > article > div {
+	grid-area: chart;
+	aspect-ratio: 1 / 1;
+	align-items:start;
+	text-align: start;
+}
+.online main > article:nth-of-type(1) > section > article > div > p {
+	display: none;
+}
+/* -------------------- アクセス -------------------- */
+.access main {
+    display: grid;
+    grid-template-areas:
+        "h h"
+        "figure dl";
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2em;
+}
+.access main > h1 {
+    grid-area: h;
+    text-align: center;
+}
+.access main > figure {
+    grid-area: figure;
+}
+.access main > figure > iframe {
+    inline-size: 100%;
+    block-size: 100%;
+}
+.access main > dl {
+    grid-area: dl;
+    display: grid;
+    grid-template-columns: 5em 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+    text-align: start;
+}
+.access main > dl > dt {
+    text-align: justify;
+    text-align-last: justify;
+    grid-column: 1;
+    font-weight: bold;
+}
+.access main > dl > dt::after {
+    content: ":";
+}
+.access main > dl > dd {
+    grid-column: 2;
+}
+/* -------------------- クーポン -------------------- */
+.coupon dl {
+    grid-area: dl;
+    display: grid;
+    grid-template-columns: 5em 1fr;
+    column-gap: 1em;
+	margin-block: 2em;;
+    row-gap: 1em;
+    text-align: start;
+}
+.coupon dl > dt {
+    text-align: justify;
+    text-align-last: justify;
+    grid-column: 1;
+    font-weight: bold;
+}
+.coupon dl > dt::after {
+    content: ":";
+}
+.coupon dl > dd {
+    grid-column: 2;
+}
+
+/* -------------------- Cafe Forestについて -------------------- */
+.about section {
+	margin-block: 3em;
+}
+.about section > h2 {
+	border-bottom: 1px solid var(--color-brown1);
+	padding-block-end: 0.3em;
+}
+.about p {
+	display: flex;
+	justify-content: start;
+	text-align: start;
+}
+
+/* -------------------- その他 -------------------- */
+.company > main,
+.policy > main,
+.tokushoho > main {
+	min-block-size: 100vh;
+}
+/* =======================================================
+メディアクエリ
+======================================================= */
+@media screen and (max-width: 767px) {
+
+	/******************** 今月のコーヒー＆ケーキ ********************/
+	.monthly main {
+		padding-inline: 1.5em;
+	}
+	.monthly main > section:nth-of-type(1) > p {
+		inline-size: 100%;
+        text-align: start;
+	}
+	.monthly main > section:nth-of-type(1) > p > br {
+		display: unset;
+	}
+	.monthly main > section:nth-of-type(1) > p:last-child {
+        text-align: center;
+    }
+    .monthly main > section:nth-of-type(1) > article h4 {
+        text-align: left;
+    }
+    .monthly main > section:nth-of-type(1) > article img {
+        inline-size: 100%;
+        text-align: center;
+    }
+	.monthly main > section:nth-of-type(2) > article > section {
+		grid-column: 1 / span 2;
+		display: grid;
+		grid-template-columns:1fr 1fr;
+		column-gap: 1em;
+		margin-block: 0.5em;
+
+	}
+	.monthly main > section:nth-of-type(2) > article > section > *:nth-child(1) {
+		grid-row: 1 / span 4;
+	}
+	.monthly main > section:nth-of-type(2) > article > section > *:not(:nth-child(1)) {
+		grid-column: 2;
+	}
+
+	/* -------------------- お問い合わせ -------------------- */
+	.contact h1 {
+		text-align: center;
+	}
+	.contact table tr th {
+		display: block;
+		margin-block-start: 1em;
+		margin-block-end: 0.5em;
+		padding-inline-start: unset;
+		inline-size: 100%;
+	}
+	.contact table tr td {
+		display: block;
+		inline-size: 100%;
+	}
+	.contact table tr td input {
+		display: block;
+		inline-size: 100%;
+	}
+	.contact table tr:nth-of-type(1) td input {
+		inline-size: 50%;
+	}
+	.contact table tr:nth-of-type(4) td input {
+		inline-size: 50%;
+	}
+	.contact table tr td textarea {
+		display: block;
+		inline-size: 100%;
+	}
+	.result main > ul {
+        flex-direction: column;
+    }
+    .result main > ul > li {
+        margin-inline: auto;
+    }
+    .result main > ul > li > a {
+        inline-size: 200px;
+        block-size: 200px;
+    }
+	
+	/* -------------------- 通販 -------------------- */
+	.online main > article:nth-of-type(1) > section {
+		grid-template-columns: 100%;
+	}
+	.online main > article:nth-of-type(1) > section > h3 {
+		grid-column: unset;
+	}
+	.online main > article:nth-of-type(1) > section > article > h4 {
+		font-size: 1.2em;
+	}
+	
+		
+	/* -------------------- アクセス -------------------- */
+    .access main {
+        grid-template-areas:
+            "h"
+            "figure"
+            "dl";
+        grid-template-columns: 1fr;
+		row-gap: 1em;
+    }
+    .access main > figure > iframe {
+        aspect-ratio: 16/9;
+		inline-size: 100%;
+		block-size: unset;
+    }
+	/* -------------------- クーポン -------------------- */
+	.coupon .pc {
+		margin: auto;
+		width: 100%;
+	}
+		
+}
+@media print {
+	.coupon header,.coupon h1,.coupon h2,.coupon p,.coupon a,.coupon dl,.coupon footer {
+		display:none;
+	}
+	.coupon .sumaho{
+		display:block;
+		height:auto;
+		width:57mm;
+		margin-inline:auto;
+	} 
+}

@@ -1,0 +1,261 @@
+﻿@charset "utf-8";
+
+/*----------------- 基本書式 -----------------*/
+.menu main {
+	text-align:justify;
+	background-color: var(--color-orange2);
+}
+@supports(text-justify:inter-character) {
+	.menu > main {
+		text-justify:inter-character;
+	}
+}
+.menu > main h1 {
+	text-align:center;
+}
+.menu > main h1 ~ p {
+	text-align:center;
+}
+.menu > main h2 {
+	display:none;
+	text-align:center;
+}
+.menu > main h2 ~ p {
+	text-align:center;
+}
+.menu > main h3 {
+	font-size:1.2em;
+	padding-block-start:1em;
+	margin-block-end:1em;
+	text-align:center;
+}
+.menu > main h4 {
+	font-size:1.0em;
+	margin-block-start:0.5em;
+	text-align:center;
+}
+.menu > main small {
+	font-weight:normal;
+}
+.menu > main a {
+	text-decoration:none;
+}
+.menu > main > p:last-of-type {
+	margin-block-start: 3em;
+}
+.menu main > section {
+	border-radius:0 1rem 1rem 1rem;
+	position:relative;
+}
+.menu main > section > p {
+	text-align:start;
+	inline-size:90%;
+	margin-block-start:3em;
+	margin-inline:auto;
+}
+.menu main > section > section {
+	margin-block-start:3em;
+}
+.menu main > section > section > h3 {
+	margin-block-end:2em;
+}
+.menu > main > section > section > p {
+	text-align:center;
+}
+/*----------------- タブ切り替え -----------------*/
+.menu > main > div {
+	display:flex;
+	justify-content:start;
+	margin-inline:auto;
+	justify-content: center;
+}
+.menu > main > div > label {
+	inline-size:33%;
+	block-size:3rem;
+	line-height:3rem;
+	background-color:rgba(241, 195, 161, 0.5);
+	font-size:1.2em;
+	text-align:center;
+	color:rgb(255,255,255)
+}
+.menu > main > div > label:not(:last-of-type) {
+	margin-inline-end:0.2em;
+}
+.menu main > div > label:hover { 
+	opacity:0.8;
+}
+.menu main input#item1:checked ~ div > label:nth-of-type(1),
+.menu main input#item2:checked ~ div > label:nth-of-type(2),
+.menu main input#item3:checked ~ div > label:nth-of-type(3) {
+	background-color:var(--color-orange1);
+	font-size:1.4em;
+	font-weight:bold;
+	color:var(--color-brown2);
+}
+.menu main input#item1:checked ~ div > label:nth-of-type(1):hover,
+.menu main input#item2:checked ~ div > label:nth-of-type(2):hover,
+.menu main input#item3:checked ~ div > label:nth-of-type(3):hover {
+	opacity:1.0;
+}
+.menu main input[type="radio"] {
+	display:none;
+}
+.menu main > section {
+	display:none;
+}
+.menu main input#item1:checked ~ section#drink,
+.menu main input#item2:checked ~ section#food,
+.menu main input#item3:checked ~ section#dessert {
+	display:block;
+}
+/*----------------- メニューリスト -----------------*/
+.menu > main > section > section > div {
+	display:grid;
+	grid-template-columns:repeat(3, max(250px, var(--logPx) * 280));
+	justify-content:center;
+	gap:1em;
+	margin-inline:auto;
+	margin-block-end:1em;
+}
+/* 写真 */
+.menu > main > section > section > div > article {
+	margin-block-end: 1.5em;
+	padding:0.5em;
+	background-color:rgb(255,255,255);
+}
+.menu > main > section > section > div > article img {
+	inline-size:100%;
+	block-size:max(168px, var(--logPx) * 225);
+	object-fit:cover;
+	object-position:center;
+}
+.menu > main > section > section > div > article > h4 {
+	block-size:2.5em;
+}	
+.menu > main > section > section > div > article > p {
+	margin:0px;
+}
+.menu > main > section > section > div > article > p:not(first-of-child) {
+	text-align:center;
+}
+.menu > main > section > section > div > article > p:last-child {
+	margin-block-start: 1em;
+}
+
+/* 写真2枚表示 */
+.menu .img2 img {
+		inline-size:calc( (100% - 0.5em) / 2);
+}
+.menu > main > section > section > div > article > p:first-of-type {
+	text-align:justify;
+	block-size:4.5em;
+	letter-spacing: -0.05em;
+}
+/*----------------- aside -----------------*/
+.menu > main aside {
+	inline-size: 90%;
+	background-color:rgb(247,245,240);
+	padding:2em;
+	margin-inline:auto;
+	margin-block:2em 1em;
+	border-radius:0.5em;
+}
+.menu > main aside > h3 {
+	padding-block-start:0px;
+}
+.menu > main aside p {
+	text-align:justify;
+}
+
+/*----------------- オーダーケーキ -----------------*/
+/* オーダーケーキサイズ　サイズと価格*/
+.menu #dessert > aside > div {
+	display:flex;
+	justify-content:center;
+	gap:1em;
+	margin-block: 1.5em;
+}
+.menu #dessert > aside > div > article{
+	display:grid;
+	grid-template-rows:3em 1.5em 1.5em 1.5em;
+	inline-size:calc(var(--logPx) * 200);
+	flex-shrink:0;
+}
+.menu #dessert > aside > div > article > h4,
+.menu #dessert > aside > div > article > p {
+	padding:0;
+	margin:0;
+}
+.menu #dessert > aside > div > article > p {
+	font-size: 0.8em;
+}
+.menu #dessert > aside > div > article > p > br {
+	display:none;
+}
+
+/* オーダーケーキ　直径 */
+.menu #dessert > aside > div > article > h4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color:var(--color-orange1);
+	border-radius:50%;
+}
+.menu #dessert > aside > div > article:nth-of-type(1) h4 {
+	inline-size:2em;
+	block-size:2em;
+}
+.menu #dessert > aside article:nth-of-type(2) h4 {
+	inline-size:2.5em;
+	block-size:2.5em;
+}
+.menu #dessert > aside article:nth-of-type(3) h4 {
+	inline-size:3em;
+	block-size:3em;
+}
+
+/* オーダーケーキ　注意事項 */
+.menu #dessert > aside > ul {
+	margin-block:2em;
+}
+.menu #dessert > aside > ul > li {
+	text-align:start;
+}
+.menu #dessert > aside > ul > li::before {
+	content: "※";
+	margin-inline-end: 0.5em;
+}
+
+/* ===========================================================
+メディアクエリ
+=========================================================== */
+@media screen and (max-width:767px) {
+	.menu > main aside {
+		margin: 0px;
+		inline-size: 100%;
+	}
+	/*----------------- メニューリスト -----------------*/
+	.menu main > section > section > div {
+		grid-template-columns:1fr 1fr;
+	}
+	/*----------------- メニューリスト（ドリンク・デザート）の説明文 -----------------*/
+	.menu main > #drink > section > p,
+	.menu main > #dessert > section > p {
+		inline-size:90%;
+		text-align:start;
+		margin-inline:auto;
+	}
+	/*----------------- オーダーケーキの案内 -----------------*/
+	.menu main > #dessert > aside > div {
+		display:block;
+	}
+	.menu main > #dessert > aside > div > article {
+		display:grid;
+		grid-template-columns:4em 3em 12em 11em;
+		grid-template-rows:3em;
+	}
+}
+
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="東京都北区のカフェ「Cafe Forest（カフェフォレスト）」の問い合わせページ。熟練焙煎士が挽くコーヒー、パティシエ特製デザート、店頭販売、通販、コーヒーが1杯無料になるクーポン、アクセスについてなど、お気軽にお問合せください。"
+        />
+        <meta name="keywords" contact="質問,クーポン,オーダー店舗,ケーキ," />
+        <title>お問い合せ | Cafe Forest</title>
+        <link rel="stylesheet" href="../css/general.css" type="text/css" />
+        <link rel="stylesheet" href="../css/pages.css" type="text/css" />
+    </head>
+    <body class="contact">
+        <header>
+            <p><a href="../index.html"><img src="../images/logo_maru.svg" width="auto" height="170px" alt="ロゴ" /></a></p>
+            <p></p>
+            <div class="openbtn"><span></span><span></span><span></span></div>
+            <nav id="g-nav">
+                <h2>ナビゲーション</h2>
+                <ul>
+                    <li><a href="../index.html">トップページ</a></li>
+                    <li><a href="../menu/index.html">Cafeメニュー</a></li>
+                    <li><a href="../monthly/monthly.php">今月のコーヒー＆ケーキ</a></li>
+                    <li><a href="../online/index.html">通販</a></li>
+                    <li><a href="../coupon/index.html">クーポン</a></li>
+                </ul>
+            </nav>
+            <div class="circle-bg"></div>
+        </header>
+        <main>
+            <h1>お問い合わせ</h1>
+            <p>以下のフォームに入力の上、「入力内容の確認」ボタンをクリックもしくはタップして下さい。</p>
+            <p>フォームからのお問合せは、返信までに3営業日ほどお時間をいただく場合がございます。<br />お急ぎの場合はお電話（TEL 03-3XXX-XXXX）にてお問合せください。</p>
+            <form action="confirm.php" enctype="multipart/form-data" method="POST">
+                <table>
+                    <tr>
+                        <th><label for="name">お名前</label></th>
+                        <td>
+                            <input
+								type="text"
+								name="name"
+								placeholder="例) 赤羽太郎"
+								required
+							/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">メールアドレス</label></th>
+                        <td>
+                            <input
+                                type="email"
+                                name="email01"
+                                id="email01"
+                                patter="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                placeholder="例) abc@example.com"
+                                required
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="email02">メールアドレス（確認）</label></th>
+                        <td>
+                            <input
+                                type="email"
+                                name="email02"
+                                id="email02"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                placeholder="例) abc@example.com"
+                                required
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="tel">電話番号</label></th>
+                        <td>
+                            <input type="tel" name="tel" pattern="\d{2,4}-\d{3,4}-\d{3,4}" placeholder="例) 090-XXXX-XXXX" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="querytitle">お問い合わせタイトル</label></th>
+                        <td>
+                            <select name="querytitle">
+                                <option>商品について</option>
+                                <option>通販について</option>
+                                <option>クーポンについて</option>
+                                <option>その他</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="query">お問い合わせ内容</label></th>
+                        <td><textarea name="query" required></textarea></td>
+                    </tr>
+                </table>
+                <div class="btn_wrap"><input type="submit" value="入力内容の確認" class="btn" onClick="CheckEmail(this)" /></div>
+            </form>
+        </main>
+        <footer id="footer">
+            <h2>リンク</h2>
+            <ul>
+                <li><a href="../contact/index.html">お問い合わせ</a></li>
+                <li><a href="../access/index.html">アクセス</a></li>
+                <li><a href="../company/index.html">会社概要</a></li>
+                <li><a href="../tokushoho/index.html">特定商取引法</a></li>
+                <li><a href="../policy/index.html">プライバシーポリシー</a></li>
+            </ul>
+            <div id="page-top"><a href="#"></a></div>
+            <div><small>© 2022 Asuka Watanabe</small></div>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/script.js"></script>
+    </body>
+</html>

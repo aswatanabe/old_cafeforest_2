@@ -1,0 +1,118 @@
+@charset "utf-8";
+/*---------- 共通 ----------*/
+:root {
+	--dark:rgb(127, 183, 126);		/* 背景(暗)*/
+	--light:rgb(177, 215, 180);	    /* 背景（明）*/
+	--pale:rgb(247, 246, 220);		/* 背景（淡）*/
+	--orange:rgb(255, 192, 144);	/* 背景（オレンジ） */
+	--fore:rgb(135, 100, 69);       /*文字色*/
+	--strg1:hsl(20,80%,20%);	    /*強調色1 境界線やリンクの文字列の色に使う 
+	--strg2:hsl(20,80%,40%);	 強調色2 */
+}
+header, main, footer {
+	position: relative;
+}
+body {
+	display: grid;
+	grid-template-areas:
+		"header header header "
+		". main . "
+		"footer footer footer";
+}
+header {
+	grid-area:header;
+	background-color:var(--light);
+}
+main {
+	grid-area: main;
+	margin: auto;
+	text-align: center;
+}
+footer {
+	grid-area:footer;
+	background-color:var(--orange);
+}
+
+/*---------- table ----------*/
+table {
+	table-layout: auto;
+	inline-size: min(100%, 500px);
+	border-spacing: 2em 0.5em;
+	margin: auto;
+}
+table th {
+	min-width: 7em;
+	text-align: end;
+}
+table td {
+	text-align: start;
+}
+table img {
+	max-width: 100%;
+}
+
+/*---------- form.html ----------*/
+.form textarea {
+	inline-size: 100%;
+	block-size: 5em;
+}
+
+/*---------- confirm.php ----------*/
+.confirm main > p:first-of-type {
+	color: red;
+}
+.confirm main > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+}
+.confirm main > div button {
+	border: none;
+	border-bottom: 1px solid blue;
+	font-size: 0.8em;
+	color: blue;
+	background: transparent;
+}
+
+/*---------- createText.php ----------*/
+/*ボタンデザイン*/
+.createText main > p > a {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 2em;
+	inline-size: 300px;
+	font-size: 1em;
+	transition: 0.3s;
+	text-decoration: none;
+}
+.createText main > p > a::before {
+	content: '';
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-end: 1em;
+	transform: translateY(-50%);
+	inline-size: 35px;
+	block-size: 35px;
+	border: 2px solid var(--dark);
+	border-radius: 50vh;
+	transition: 0.3s;
+}
+.createText main > p > a::after {
+	content: '';
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-end: 35px;
+	transform: translateY(-50%);
+	inline-size: 50px;
+	block-size: 2px;
+	background-color: var(--strg1);
+}
+.createText main > p > a:hover {
+	text-decoration: none;
+	background-color: var(--light);
+}
+.createText main > p > a:hover::before {
+	background-color: var(--dark);
+}
